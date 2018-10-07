@@ -1,0 +1,4 @@
+Predznanje: Sieve of Eratosthenes (https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes)
+
+Sa ovim algoritmom nadjemo sve proste brojeve do N, te za prvi upit ispisemo broj prostih brojeva do N.
+Za svaki ostali upit broja x vec znamo da li je x prost, te ispisemo rijesenje.
