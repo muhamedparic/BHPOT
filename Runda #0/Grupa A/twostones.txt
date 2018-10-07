@@ -1,0 +1,5 @@
+Potrebno predznanje: Testiranje parnosti brojeva (modularna aritmetika)
+
+Ovo je problem teorije igara, ali možemo primijetiti iz primjera da će Alice pobijediti
+ako je početni broj kamenčića neparan, dok Bob pobjeđuje ako je početni broj kamenčića
+paran.

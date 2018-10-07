@@ -1,0 +1,4 @@
+Autor: Muamer Paric
+Potrebno predznanje: Rad sa stringovima, kondicionali (if)
+
+Dovoljno je uporediti duzine upisanih rijeci. Ako je prva kraca od druge onda Jon Marius ne moze otici doktoru i ispisujemo "no", u suprotnom moze i ispisujemo "go".

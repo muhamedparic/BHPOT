@@ -1,0 +1,5 @@
+Potrebno predznanje: floor i ceil funkcije
+
+Broj mostova na početku moramo smanjiti za 1 jer je u tekstu objašnjeno da je poznato da se trol neće sakriti
+ispod istog mosta pod kojim je bio. Nakon toga, samo treba izračunati koliko grupa možemo formirati (floor(broj vitezova / potreban broj vitezova u grupi))
+te koliko će dana biti potrebno (ceil(broj mostova - 1 / broj grupa))

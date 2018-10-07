@@ -1,0 +1,8 @@
+Potrebno predznanje: sortiranje, rad sa nizovima
+
+Nakon unosa svih glava i visina vitezova, prvo ćemo i glave i visine vitezova sortirati.
+Zatim ćemo za svaku glavu pronaći najnižeg viteza kojeg nismo do sada iskoristili koji je viši od
+prečnika te glave. Tom vitezu ćemo dati zadatak odsijecanja te glave. To možemo lako uraditi
+tako što samo prođemo kroz niz glava i niz vitezova uporedo, te pomjerimo indeks za niz glava
+samo ako je trenutni vitez dovoljno visok. U tom slučaju također u ukupnu cijenu dodamo visinu
+viteza. U suprotnom, pomjeramo samo indeks na niz vitezova naprijed za 1.

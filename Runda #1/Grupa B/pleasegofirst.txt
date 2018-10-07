@@ -1,0 +1,12 @@
+Autor: Muamer Paric
+Potrebno predznanje: rad sa stringovima, rada sortiranje
+
+Prvo primjetimo da, u svakom rasporedu ljudi, svako ce cekati 5 sekundi za svaku osobu izmedju sebe i posljednje osobe u svojoj grupi prijatelja plus 5 sekundi, posto ce sigurno doci na vrh prije tog prijatelja, i morati cekati barem 5 sekundi tu.
+Dakle, ako je raspored prijatelja AABBB onda ce ukupno vrijeme cekanja biti 20 sekundi: Prva osoba ce cekati 5 sekundi, druga 0, treca 10, cetvrta 5 i peta 0.
+Dalje, ako su sve grupe prijatelja zajedno, odnosno izmedju prve i posljednje osobe u grupi se nalaze samo osobe iz te iste grupe prijatelja, onda nije vazan redoslijed tih grupa.
+Dakle, ako je raspored prijatelja BBBAA onda ce ukupno vrijeme cekanja biti isto kao za AABBB, sto je 20.
+Posto procesom kojim osobe pustaju jedni druge ispred sebe u redu uvijek rezultira u rasporedu u kojem su sve grupe prijatelja zajedno, a svaki takav raspored ima isto vrijeme cekanja za odredjeni skup ljudi dovoljno je napraviti bilo kakav takav raspored, i izracunati ukupno vrijeme cekanja, te uporediti ga sa vremenom cekanja bez ikakve promjene redoslijeda ljudi.
+Da bismo poredali ljude u takav redoslijed sortirat cemo string leksikografski. 
+Prije sortiranja smo za svaku grupu odredili poziciju zadnjeg clana u grupi, te odredili ukupno vrijeme cekanja prije promjene redoslijeda ljudi.
+Nakon sortiranja uradimo isto.
+Rezultat nam je razlika potrebnog ukupnog vremena cekanja prije promjene rasporeda i ukupnog vremena cekanja nakon primjene rasporeda.

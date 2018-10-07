@@ -1,0 +1,6 @@
+Potrebno predznanje: petlje, osnovna aritmetika
+
+Da bismo izračunali zbir (Z) prvih N brojeva, koristimo se formulom Z = N * (N + 1) / 2.
+Zbir prvih N parnih brojeva je 2 puta veći od zbira prvih N prirodnih brojeva, jer samo umjesto 1 ide 2, umjesto 2 ide 4, umjesto 3 ide 6 itd.
+Niz prvih N neparnih brojeva se razlikuje od niza prvih N parnih brojeva samo po tome što je svaki broj smanjen za 1. Zbog toga se koristimo formulom za
+zbir prvih N parnih brojeva i samo smanjimo rezultat za N.

@@ -1,0 +1,6 @@
+https://open.kattis.com/problems/bing
+
+Potrebno predznanje: Trie (https://en.wikipedia.org/wiki/Trie)
+
+Oznacimo sa T cvor u kojem se trenutno nalazimo, a sa S(T) broj stringova ciji prefix zavrsava u cvoru T (Prefixi stringa abcd su: a, ab, abc, abcd).
+Ako neki string S zavrsava u cvoru T, tada je broj pretraga koje pocinju sa S jednak S(T) - 1 (Oduzima se S) tj rijesenje je S(T) - 1.

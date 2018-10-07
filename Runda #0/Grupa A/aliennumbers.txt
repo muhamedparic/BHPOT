@@ -1,0 +1,4 @@
+Potrebno predznanje: Poznavanje brojevnih baza
+
+U prvom dijelu programa, izračunamo vrijednost ulaznog broja u dekadnom brojnom sistemu, tako što za svaki znak pronađemo poziciju
+u ulaznom alfabetu. Koristeći se sličnim procesom, pretvorimo broj iz dekadnog brojnog sistema u izlazni.

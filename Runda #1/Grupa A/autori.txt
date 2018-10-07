@@ -1,0 +1,4 @@
+Potrebno predznanje: rad sa stringovima
+
+U krajnju skraćenicu idu prvi karakter ulaznog stringa, kao i svaki karakter kojem prethodi srednja crtica
+("-").

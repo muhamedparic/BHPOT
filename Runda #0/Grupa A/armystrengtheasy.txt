@@ -1,0 +1,6 @@
+Potrebno predznanje: petlje
+
+Ako pročitamo pažljivo tekst zadatka, vidjet ćemo da je bitan samo najjači
+član svake vojske, a ne i ostali. Ako je najjači član Godzilline vojske
+jači ili isto jak kao najjači član MechaGodzilline vojske, Godzilla je pobjednik.
+U suprotnom, MechaGodzilla je pobjednik.

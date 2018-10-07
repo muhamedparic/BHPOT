@@ -1,0 +1,5 @@
+Potrebno predznanje: rad sa nizovima
+
+Koristili smo 2 dodatna niza uz ulazni niz brojeva. Jedan drži najveći broj prije trenutnog,
+dok drugi drži najmanji broj nakon trenutnog. Broj je pivot ako je veći ili jednak najvećem broju
+prije trenutnog, a manji ili jednak od najmanjeg broja nakon trenutnog.
