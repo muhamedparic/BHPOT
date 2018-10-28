@@ -1,0 +1,9 @@
+Autor: Muamer Paric
+
+Jedino cemo ispisati 0 ako su sve cifre broja poredane u opadajucem redoslijedu.
+U suprotnom, trazimo iducu leksikografsku permutaciju cifara broja.
+Ovo lagano mozemo postici tako sto unesemo broj kao string i iskoristimo funkciju "next_permutation" iz algorithm biblioteke.
+Ova funkcija vraca false ako je objekat vec poredan obrnuto leksikografski (u nasem slucaju da su cifre u opadajucem redoslijedu).
+U suprotnom vraca true, te mjenja objekat (u nasem slucaju string) u iduci leksikografski poredak.
+
+Nije bilo obavezno poznavanje ove funkcije za rjesavanje zadatka, ali koristenjem nje smo znacajno sebi olaksali posao.

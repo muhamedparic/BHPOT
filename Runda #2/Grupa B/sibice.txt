@@ -1,0 +1,4 @@
+Potrebno predznanje: Pitagorina teorema
+
+Kutiju mozemo posmatrati kao pravougaonik. Najduze rastojanje linije koja se nalazi unutar pravougaonika je dijagonala pravougaonika.
+Dovoljno je izracunati dijagonalu pravougaonika te za svaku duzinu sibice provjeriti da li je manja od dijagonale pravougaonika.

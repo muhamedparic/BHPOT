@@ -1,0 +1,88 @@
+Potrebno znanje: generalni grafovi, proračun metrika, sortiranje, detekcija ciklusa, union-find
+Opcionalno za druga rješenja: binarna pretraga po rješenju, Kruskalov algoritam
+
+Kako je ograničenje da završavamo našu traženu putanju opet u početnom čvoru,
+jasno je da tražimo ciklus u grafu i to ciklus koji daje najmanju vrijednost
+naše metrike (označit ćemo je s E) E = L^2+a*K. Jako je zanimljivo da dvije
+stvari moramo optimizovati tu, te je to inače dosta težak problem.
+
+Slijedi dokaz da je a*K dio skoro pa nebitan u zadatku. Ovo se moglo lagano
+naslutiti iz ograničenja, te nije bilo potrebno dokazati. Mi navodimo dokaz
+između crtica zbog kompletnosti.
+
+--------------------
+
+Gledajući bolje ograničenja imamo da je 10^6 <= c <= 10^9, što znači da će L
+uvijek biti >= 10^6. Pored toga 1 <= a <= 20, te M <= 2*10^5, te je najveća
+moguća vrijednost a*K <= 20 * 2*10^5. Zanimljivo je dalje i da niti jedan edge
+nema isti broj slatkiša na sebi, što znači da u skupu od K slatkiša imamo L >=
+10^6+K-1. Dokazat ćemo da je ovo dosta da tvrdimo da a*K član ne igra bitnu
+ulogu u našoj metrici, te da u potpunosti možemo optimizovati rješenje tražeći
+minimalno L^2, odnosno minimalno L. Za tako nađeno L onda nalazimo minimalno K,
+odnosno najmanji ciklus. Dokažimo prvo navedenu činjenicu.
+
+Sada se pretpostavka svodi na to da je nemoguće naći slučaj tako da K1 < K2,
+L1 > L2 i E1 < E2, tj. da je (K1, L1) bolje rješenje od (K2, L2) iako je L1 > L2.
+Pretpostavimo suprotno, tj. da postoje takve dvije dvojke. Imamo:
+
+E1 = L1^2 + a*K1 < L2^2 + a*K2 = E2
+
+Recimo da je L1 minimalno veće od L2 tj.
+
+E1 = (L2+L1-L2)^2 + a*K1 = L2^2 + 2*L2*(L1-L2) + (L1-L2)^2 + a*K1
+
+Polazeći opet od E1 < E2 i sređujući malo izraz imamo:
+
+2*(L1-L2)*L2 + (L1-L2)^2 < a*(K1-K2)
+
+Znamo:
+
+a*(K1-K2) <= 20*2*10^5 = 4*10^6
+2*(L1-L2)*L2 >= 2*(L1-L2)*(10^6+K2-1)
+
+Pa imamo:
+
+2*(L1-L2)*(10^6+K2-1) + (L1-L2)^2 < 4*10^6
+
+Ovo je očigledno pogrešno za L1 >= L2 + 2, te ostaje samo još slučaj kada je L1
+= L2 + 1. Vratimo se sada u početnu formulu:
+
+L1^2 + a*K1 < L2^2 + a*K2 <=> (L1-L2)(L1+L2) < a*(K2-K1) => /L1 = L2 + 1/ =>
+L1+L2 < a*(K2-K1).
+
+U najboljem slučaju to je 2*10^6 + 2*K2-2 < 20*2*10^5, što je tačno, te s ovim
+brojevima ne možemo dokazati kontradikciju L1 = L2 + 1. Ono što pretpostavljamo
+od početka je da je max{K2} ~ M, međutim tu je greška što to sigurno nije
+najbolji ciklus, jer čim u nekoj sekvenci čvorova koje posjećujemo imao više
+puta naveden isti, to je ciklus koji se već desio i nikad nam nije gore uzeti
+taj manji ciklus samo, što u biti znači da za optimalna rješenja vrijedi max{K2}
+~ N ~ 10^5, te konačno naš u najgorem slučaju izraz za L1 = L2 + 1 postaje:
+
+2*10^6 + 2*K2-2 < 20*10^5 <=> 2*K2-2 < 0, što je očigledna kontradikcija, te
+zaključujemo da je dosta samo minimizirati L.
+
+--------------------
+
+Nakon što zaključimo da je dosta samo gledati L, zapravo tražimo ciklus u grafu
+koji ima najmanju maksimalnu granu.
+
+Jedan pristup bi bio da uradimo binarnu pretragu po maksimalnoj grani, je te da
+vršimo DFS iz svih čvorova (pazeći da ne posjetimo neki dva puta) i tako tražimo
+da li još uvijek u grafu postoji ciklus. Složenost ovog rješenja je
+O((n+m)*logM). Nakon što nađemo rješenje dosta je samo pronaći najmanji ciklus
+koji uključuje tu kritičnu granu koja je rješenje. Ovdje nam dosta pomaže
+unikatnost, jer smo sigurno da ne postoji još jedan ciklus koji ima istu tu
+granu kao maksimum, osim možda nekog koji trenutni obuhvata, ali njega bi tek
+kasnije našli. To dodatno tražimo čisto da bi znali koliko nam je K za početnu
+metriku.
+
+Zanimljiviji pristup bi bio da sortiramo edgeve po dužini, te da ih dodajemo u
+graf od najmanjeg ka većima, sve dok se ne napravi ciklus. Nije teško
+primijetiti da čim se prvi ciklus napravi, on nam upravo predstavlja i
+rješenje. Implementacija se radi potpuno jednako kao Kruskalov algoritam, s
+izmjenom da zapravo stajemo čim napravimo ciklus i računamo mu dužinu. Ovo
+možemo vršiti bojanjem ili union find strukturom za čuvanje trenutne povezanosti
+grafa. Drugo je naravno brže i preporučeno, te je ponuđeno rješenje upravo te
+varijante. Složenost algoritma, uz ispravno implementiran union-find sa
+kompresijama, je majorirana sortiranjem čvorova po veličini, te iznosi O(M*logM)
+što je sasvim dovoljno za naša ograničenja.

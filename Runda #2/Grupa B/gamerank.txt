@@ -1,0 +1,8 @@
+Autor: Muamer Paric
+
+Unesemo string koji sadrzi sve pobjede i gubitke, te simuliramo igranje.
+Drzimo trenutni rank (r), broj zvjezdica (s), te broj uzastopnih pobjeda (cw).
+Ne smijemo zaboraviti da prilikom gubitka broj uzastopnih pobjeda se vraca na 0.
+Ako u bilo kojem trenutku rank postane 0 to znaci da smo dosli do Legend ranka, 
+u tom slucaju mozemo odmah ispisati "Legend" i zavrsiti sa radom programa.
+Nakon prolazka kroz cijeli string ispisemo rank.

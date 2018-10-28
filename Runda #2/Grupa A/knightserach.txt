@@ -1,0 +1,6 @@
+Potrebno predznanje: Depth First Search (DFS)
+
+Primjetimo da se Alice samo moze pomjeriti za jedno mjesto po jednoj osi i za dva mjesta po drugoj osi. Tj. ako se Alice nalazi na poziciji (x,y)
+i ako se vrijednost x ose promjeni za 2 (negativno ili pozitivno) tada se vrijednost y ose moze samo promjeniti za 1 (negativno ili pozitivno).
+Isto vazi i ako se vrijednost y ose promjeni za 2.  U tom slucaju u matrici, kada se naidje na karakter I (pocetni karakter stringa), pusta DFS
+cija je pocetna pozicija mjesto tog karaktera.

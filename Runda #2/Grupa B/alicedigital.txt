@@ -1,0 +1,11 @@
+Autor: Muhamed Parić
+Potrebno predznanje: Kumulativna suma niza
+
+Definišimo validan podniz ulaznog niza A kao bilo koji uzastopni podniz koji ima tačno jedan element m i niti jedan element manji od m.
+Prvi korak je da napravimo kumulativnu sumu ulaznog niza, bit će nam potrebna kasnije. Zatim, u jedan niz/vektor stavimo indekse svih
+elemenata manjih ili jednakih m. Ovo su ključni elementi koji postavljaju ograničenja na validne nizove. Nakon toga ćemo iterirati kroz
+ovaj niz i, za indeks svakog m, pronaći indekse prethodnog elementa manjeg ili jednakog m (taj indeks je prethodni element ovog niza) te
+indeks narednog elementa manjeg ili jednakog m (taj indeks je naredni element ovog niza). Ovi indeksi predstavljaju granice jednog
+validnog podniza (s tim da se nalaze prije, odnosno nakon samog validnog podniza, što znači da ih ne smijemo uključiti). Suma samog
+podniza jeste jednaka razlici kumulativne sume do kraja validnog podniza (odnosno dobiveni krajnji indeks umanjen za 1) i elementa
+prije početka validnog podniza (odnosno dobivenog početnog indeksa). Najveća od ovih suma je rješenje.
